@@ -1,4 +1,4 @@
-# Control de 2 ledss por comandos seriales con Arduino UNO 
+# Control de 2 leds por comandos seriales con Arduino UNO 
 
 Politécnico Grancolombiano · Internet de las Cosas · Entrega grupal 2
 Noviembre 2026
