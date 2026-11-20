@@ -1,0 +1,88 @@
+// Politecnico Gran Colombiano
+// Internet De Las Cosas
+// Control de LEDs por comandos seriales (UART a 9600 baudios)
+// Entrega 2
+// Comandos:
+//   V -> Al presionar enciende solo el LED verde
+//   R -> Al presionar enciende solo el LED rojo
+//   A -> Al presionar enciende ambos LEDs
+//   0 -> Al presionar apaga ambos LEDs
+//   * Al presionar Cualquier otro caracter -> se informa como entrada no valida
+//
+// Si implementaramos el circuito real, el modulo HC-05 se conectaria a los pines 0 (RX) y 1 (TX) del arduino,
+// por lo que los comandos llegan por la misma UART que usa el monitor serial.
+// En el simulador, los comandos se escriben directamente en el monitor serial.
+
+const int LED_VERDE = 8;   // LED verde con resistencia de 220 ohm
+const int LED_ROJO = 9;    // LED rojo con resistencia de 220 ohm
+
+bool estadoVerde = false;  // true = encendido
+bool estadoRojo = false;
+
+// Aplica el estado guardado a los pines de los LEDs
+void aplicarEstado() {
+  digitalWrite(LED_VERDE, estadoVerde ? HIGH : LOW);
+  digitalWrite(LED_ROJO, estadoRojo ? HIGH : LOW);
+}
+
+// Informa por el monitor serial como quedaron los LEDs
+void mostrarEstado() {
+  Serial.print("Estado -> Verde: ");
+  Serial.print(estadoVerde ? "ENCENDIDO" : "APAGADO");
+  Serial.print(" | Rojo: ");
+  Serial.println(estadoRojo ? "ENCENDIDO" : "APAGADO");
+}
+
+void setup() {
+  pinMode(LED_VERDE, OUTPUT);
+  pinMode(LED_ROJO, OUTPUT);
+
+  Serial.begin(9600);      // enlace serial a 9600 baudios
+  aplicarEstado();         // arranca con ambos LEDs apagados
+
+  Serial.println("Sistema listo. ingresa la instruccion: V (verde), R (rojo), A (ambos), 0 (apagar)");
+  mostrarEstado();
+}
+
+void loop() {
+  if (Serial.available() > 0) {
+    char comando = toupper(Serial.read());   //se declara la variable tipo caracter y este acepta mayusculas y minusculas
+
+    // Ignora el salto de linea y los espacios que agrega el monitor serial
+    if (comando == '\n' || comando == '\r' || comando == ' ') {
+      return;
+    }
+
+    switch (comando) {
+      case 'V':
+        estadoVerde = true;
+        estadoRojo = false;
+        Serial.println("Comando V recibido: LED verde");
+        break;
+      case 'R':
+        estadoVerde = false;
+        estadoRojo = true;
+        Serial.println("Comando R recibido: LED rojo");
+        break;
+      case 'A':
+        estadoVerde = true;
+        estadoRojo = true;
+        Serial.println("Comando A recibido: ambos LEDs");
+        break;
+      case '0':
+        estadoVerde = false;
+        estadoRojo = false;
+        Serial.println("Comando 0 recibido: apagar todo");
+        break;
+      default:
+        // simbolo o letra no reconocido: no se cambia el estado de los LEDs
+        Serial.print("Comando invalido: '");
+        Serial.print(comando);
+        Serial.println("  Por favor ingrese un caracter correcto'. Use V, R, A o 0.");
+        return;
+    }
+
+    aplicarEstado();
+    mostrarEstado();
+  }
+}

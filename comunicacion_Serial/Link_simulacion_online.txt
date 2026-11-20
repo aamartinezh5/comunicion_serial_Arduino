@@ -1,0 +1,3 @@
+// link en el cual se puede verifcar la simulacion en linea.
+
+Link : https://wokwi.com/projects/481181803551169537
