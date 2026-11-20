@@ -5,7 +5,7 @@ Noviembre 2026
 
 ## Descripción
 
-Este proyecto controla dos ledss (verde y rojo) con un Arduino UNO a partir de comandos de un solo carácter recibidos por el puerto serie a **9600 baudios**. En un montaje físico, los comandos llegarían desde un celular a través de un módulo Bluetooth HC-05. En la simulación (Wokwi), el monitor serial cumple el papel del enlace UART del módulo.
+Este proyecto controla dos leds (verde y rojo) con un Arduino UNO a partir de comandos de un solo carácter recibidos por el puerto serie a **9600 baudios**. En un montaje físico, los comandos llegarían desde un celular a través de un módulo Bluetooth HC-05. En la simulación (Wokwi), el monitor serial cumple el papel del enlace UART del módulo.
 
 El programa interpreta los comandos, enciende o apaga los leds, informa por el monitor serial el estado de cada uno y avisa cuando recibe un comando inválido.
 
