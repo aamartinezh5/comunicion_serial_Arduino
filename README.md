@@ -16,13 +16,14 @@ El programa interpreta los comandos, enciende o apaga los leds, informa por el m
 
 ## Componentes
 
- Componente     | Cantidad | Función 
- Arduino UNO          1      *Lee los comandos y controla los leds 
- LED verde            1      *Indicador controlado por el comando V 
- LED rojo             1      *Indicador controlado por el comando R 
- Resistencias         2      *Limitan la corriente de cada LED 
- Protoboard           1      *Montaje del circuito 
- Módulo HC-05         1      *Solo en el montaje real. No está disponible en Wokwi 
+| Componente | Cantidad | Función |
+|---|---|---|
+| Arduino UNO R3 | 1 | Lee los comandos y controla los LEDs |
+| LED verde | 1 | Indicador controlado por el comando V |
+| LED rojo | 1 | Indicador controlado por el comando R |
+| Resistencias de 220 Ω | 2 | Limitan la corriente de cada LED |
+| Protoboard | 1 | Montaje del circuito |
+| Módulo HC-05 | 1 | Solo en el montaje real. No está disponible en Wokwi |
 
 ## Conexiones
 
@@ -63,11 +64,11 @@ El programa interpreta los comandos, enciende o apaga los leds, informa por el m
 
 | # | Comando | Resultado esperado | Resultado | Evidencia |
 |---|---|---|---|---|
-| 1 | V | Verde encendido, rojo apagado | OK | [Ver captura](Evidencias/Caso2_Letra_V.png) |
-| 2 | R | Verde apagado, rojo encendido | OK | [Ver captura](Evidencias/Caso3_Letra_R.png) |
-| 3 | A | Ambos leds encendidos | OK | [Ver captura](Evidencias/Caso4_Letra_A.png) |
-| 4 | 0 | Ambos leds apagados | OK | [Ver captura](Evidencias/Caso1_Inicio_Sistema.png) |
-| 5 | X (comando inválido) | LEDs sin cambios y mensaje de error en el monitor serial | OK | [Ver captura](evidencias/Caso5_simbolo_invalido.png) |
+| 1 | V | Verde encendido, rojo apagado | OK | [Ver captura](Evidencias/Caso2_Letra_V.PNG) |
+| 2 | R | Verde apagado, rojo encendido | OK | [Ver captura](Evidencias/Caso3_Letra_R.PNG) |
+| 3 | A | Ambos leds encendidos | OK | [Ver captura](Evidencias/Caso4_Letra_A.PNG) |
+| 4 | 0 | Ambos leds apagados | OK | [Ver captura](Evidencias/Caso1_Inicio_Sistema.PNG) |
+| 5 | X (comando inválido) | LEDs sin cambios y mensaje de error en el monitor serial | OK | [Ver captura](Evidencias/Caso5_simbolo_invalido.PNG) |
 
 Cada captura muestra el circuito, el código y el monitor serial. Sus explicaciones detalladas están en el informe de la entrega.
 
