@@ -63,10 +63,10 @@ El programa interpreta los comandos, enciende o apaga los leds, informa por el m
 
 | # | Comando | Resultado esperado | Resultado | Evidencia |
 |---|---|---|---|---|
-| 1 | V | Verde encendido, rojo apagado | OK | [Ver captura](evidencias/Caso2_Letra_V.png) |
-| 2 | R | Verde apagado, rojo encendido | OK | [Ver captura](evidencias/Caso3_Letra_R.png) |
-| 3 | A | Ambos LEDs encendidos | OK | [Ver captura](evidencias/Caso4_Letra_A.png) |
-| 4 | 0 | Ambos LEDs apagados | OK | [Ver captura](evidencias/Caso1_Inicio_Sistema.png) |
+| 1 | V | Verde encendido, rojo apagado | OK | [Ver captura](Evidencias/Caso2_Letra_V.png) |
+| 2 | R | Verde apagado, rojo encendido | OK | [Ver captura](Evidencias/Caso3_Letra_R.png) |
+| 3 | A | Ambos leds encendidos | OK | [Ver captura](Evidencias/Caso4_Letra_A.png) |
+| 4 | 0 | Ambos leds apagados | OK | [Ver captura](Evidencias/Caso1_Inicio_Sistema.png) |
 | 5 | X (comando inválido) | LEDs sin cambios y mensaje de error en el monitor serial | OK | [Ver captura](evidencias/Caso5_simbolo_invalido.png) |
 
 Cada captura muestra el circuito, el código y el monitor serial. Sus explicaciones detalladas están en el informe de la entrega.
